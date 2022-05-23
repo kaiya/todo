@@ -16,5 +16,4 @@ func Init(sqlUser, sqlPass string) {
 		panic(err)
 	}
 	db.AutoMigrate(&todoModel{})
-
 }
