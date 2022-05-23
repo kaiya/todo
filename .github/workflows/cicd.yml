@@ -52,7 +52,7 @@ jobs:
 
     # Run testing on the code
     - name: Run testing
-      run: cd test && go test -v
+      run: go test -v
 
   # The "deploy" workflow
   deploy:
