@@ -38,7 +38,9 @@ jobs:
 
     # Run build of the application
     - name: Run build
-      run: go build -o /tmp/todo .
+      run: |
+        go build -o /tmp/todo .
+        ls -alh /tmp
 
     # Run vet & lint on the code
     - name: Run vet & lint
@@ -51,7 +53,10 @@ jobs:
       run: go test -v
 
     - name: copy binary
-      run: cp /tmp/todo .
+      run: |
+        cp /tmp/todo .
+        pwd
+        ls -alh .
 
     # Deploy to Docker registry
     - name: Deploy to Docker registry
