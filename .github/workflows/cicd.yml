@@ -8,13 +8,9 @@ on:
   push:
     branches:
     - master
-    - staging
-    - develop
   pull_request:
     branches:
     - master
-    - staging
-    - develop
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -42,7 +38,7 @@ jobs:
 
     # Run build of the application
     - name: Run build
-      run: go build .
+      run: go build -o /tmp/todo .
 
     # Run vet & lint on the code
     - name: Run vet & lint
@@ -63,12 +59,15 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
+    - name: copy binary
+      run: cp /tmp/todo .
+
     # Deploy to Docker registry
     - name: Deploy to Docker registry
       uses: docker/build-push-action@v1
       with:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
-        repository: wilsontanwm/gosimple
+        repository: kaiya/todo
         tag_with_ref: true
 
