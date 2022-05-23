@@ -5,4 +5,4 @@ ARG SQLPASS
 WORKDIR /app/work
 COPY ./todo /app/work/todo
 
-ENTRYPOINT ["sh", "-c", "./todo", "-sqlPass $SQLPASS"]
+ENTRYPOINT ["sh", "-c", "./todo"]
