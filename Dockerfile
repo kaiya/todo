@@ -1,8 +1,8 @@
 FROM alpine
 
-WORKDIR /app
-COPY ./todo /app/todo
 EXPOSE 8080
 ARG SQLPASS
+WORKDIR /app/work
+COPY ./todo /app/work/todo
 
-ENTRYPOINT ["sh", "-c", "/app/todo -sqlPass $SQLPASS"]
+ENTRYPOINT ["sh", "-c", "./todo", "-sqlPass $SQLPASS"]
