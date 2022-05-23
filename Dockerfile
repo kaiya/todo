@@ -5,4 +5,4 @@ COPY ./todo /app/todo
 EXPOSE 8080
 ARG SQLPASS
 
-ENTRYPOINT ["sh", "-c", "./todo -sqlPass $SQLPASS"]
+ENTRYPOINT ["sh", "-c", "/app/todo -sqlPass $SQLPASS"]
