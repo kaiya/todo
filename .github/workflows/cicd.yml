@@ -39,7 +39,7 @@ jobs:
     # Run build of the application
     - name: Run build
       run: |
-        go build -o /tmp/todo .
+        CGO_ENABLED=0 go build -o /tmp/todo .
         ls -alh /tmp
 
     # Run vet & lint on the code
