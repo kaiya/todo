@@ -6,12 +6,12 @@ import (
 	"os"
 	"strings"
 
-	"github.com/Kaiya/todo/dao"
 	"github.com/gin-gonic/gin"
+	"github.com/kaiya/todo/dao"
 )
 
 var (
-	sqlUser = flag.String("sqlUser", "root", "username for login mysql")
+	sqlUser = flag.String("sqlUser", "2XnQNnZnVfDF5Qq.root", "username for login mysql")
 	sqlPass = flag.String("sqlPass", "", "password for mysql")
 )
 
