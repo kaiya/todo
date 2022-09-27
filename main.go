@@ -7,11 +7,11 @@ import (
 	"strings"
 
 	"github.com/gin-gonic/gin"
-	"github.com/kaiya/play/todo/dao"
+	"github.com/kaiya/todo/dao"
 )
 
 var (
-	sqlHost = flag.String("sqlUser", "gateway01.ap-northeast-1.prod.aws.tidbcloud.com", "host for login mysql")
+	sqlHost = flag.String("sqlHost", "gateway01.ap-northeast-1.prod.aws.tidbcloud.com", "host for login mysql")
 	sqlPort = flag.Int("sqlPort", 4000, "port for  mysql")
 	sqlDb   = flag.String("sqlDb", "todo", "username for login mysql")
 	sqlUser = flag.String("sqlUser", "2XnQNnZnVfDF5Qq.root", "username for login mysql")
